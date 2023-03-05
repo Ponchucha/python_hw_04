@@ -28,12 +28,12 @@ shrubs_sum = shrubs[num_of_shrubs - 2] + shrubs[num_of_shrubs - 1] + shrubs[0]
 
 if shrubs_sum > max_sum:
     max_sum = shrubs_sum
-    max_sum_index = [num_of_shrubs-1]
+    max_sum_index = (num_of_shrubs-1)
 
-for i in range(1, num_of_shrubs-2):
+for i in range(1, num_of_shrubs-1):
     shrubs_sum = shrubs[i - 1] + shrubs[i] + shrubs[i + 1]
     if shrubs_sum > max_sum:
         max_sum = shrubs_sum
         max_sum_index = i
-print(f"Максимальное количество ягод будет собрано с {max_sum_index+1} куста и двух соседних")
+print(f"Максимальное количество ягод будет собрано с {max_sum_index+1 if max_sum_index < num_of_shrubs-1 else num_of_shrubs} куста и двух соседних")
 
